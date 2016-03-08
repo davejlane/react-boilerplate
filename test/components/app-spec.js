@@ -10,7 +10,7 @@ describe('App', () => {
     renderer.render(<App />);
     const actual = renderer.getRenderOutput().type;
     const expected = 'div';
-    console.log(renderer.getRenderOutput());
+    // console.log(renderer.getRenderOutput().props.className);
     expect(actual).toEqual(expected);
   });
 });
