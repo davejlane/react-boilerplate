@@ -5,7 +5,8 @@ module.exports = {
   devtool: 'source-maps',
 
   entry: [
-    './src/index.js'
+    './src/index.js',
+    './src/styles/main.less'
   ],
 
   output: {
@@ -21,8 +22,14 @@ module.exports = {
         loader: 'babel'
       },
 
-      { test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+      // { test: /\.css$/,
+      //   loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+      // },
+
+      {
+        test: /\.less$/,
+        // loader: "style!css!autoprefixer!less"
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!autoprefixer")
       },
     ],
   },
