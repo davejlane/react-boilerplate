@@ -2,6 +2,7 @@
   color: #aaa;
   max-width: 42em;
   margin: 0 auto;
+  filter: grayscale(50%);
 }
 
 .foo {
