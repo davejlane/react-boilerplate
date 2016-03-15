@@ -5,12 +5,12 @@ import App from '../../src/components/app.js';
 
 describe('App', () => {
 
-  it('should render a div', () => {
+  it('should render a div with a class name of app__base', () => {
     const renderer = TestUtils.createRenderer();
+    const expected = 'div';
     renderer.render(<App />);
     const actual = renderer.getRenderOutput().type;
-    const expected = 'div';
-    // console.log(renderer.getRenderOutput().props.className);
     expect(actual).toEqual(expected);
+    expect(renderer.getRenderOutput().props.className).toInclude('app__base');
   });
 });
