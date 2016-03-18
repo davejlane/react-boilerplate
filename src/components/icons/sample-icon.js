@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default (props) => {
+
+  propTypes: {
+    classes: React.PropTypes.string
+  }
+
   return (
     <svg  aria-hidden="true"
           className={props.classes}
